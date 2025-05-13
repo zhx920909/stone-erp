@@ -2,7 +2,7 @@
 import { reactive } from 'vue'
 
 const formData = reactive({
-    employeeID: '',
+    employeeNo: '',
     password: '',
 })
 
@@ -10,6 +10,19 @@ const getLogoUrl = () => {
     return new URL('../assets/logo.svg', import.meta.url).href
 }
 const logoFit = 'fill'
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const toRegister = () => {
+    router.push({
+        name: 'register',
+        params: {
+            employeeNo: formData.employeeNo,
+        },
+    })
+}
 </script>
 
 <template>
@@ -42,7 +55,7 @@ const logoFit = 'fill'
                         >工号</span
                     >
                     <el-input
-                        v-model="formData.employeeID"
+                        v-model="formData.employeeNo"
                         size="large"
                         placeholder="请输入工号"
                         clearable
@@ -59,11 +72,15 @@ const logoFit = 'fill'
                     />
                 </div>
 
-                <div class="mb-4 flex flex justify-end">
+                <div class="mb-4 flex justify-end">
                     <el-link type="primary">找回密码</el-link>
                 </div>
 
-                <el-button type="primary" size="large" class="w-full"
+                <el-button
+                    type="primary"
+                    size="large"
+                    class="w-full"
+                    @click="toRegister()"
                     >登录</el-button
                 >
             </el-form>
