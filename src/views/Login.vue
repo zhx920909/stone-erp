@@ -17,7 +17,7 @@ const logoFit = 'fill'
         class="m-0 p-0 box-border bg-[#f5f7fa] flex justify-center items-center h-screen bg-gradient-to-br from-[#f5f7fa] to-[#e4e8eb]"
     >
         <div
-            class="w-[380px] bg-white rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.1)] p-10 relative overflow-hidden"
+            class="w-[420px] bg-white rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.1)] p-10 relative overflow-hidden"
         >
             <div class="flex justify-center mb-[20px]">
                 <el-image
